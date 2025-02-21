@@ -1,9 +1,7 @@
-export const cart = [{
-  productName: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
+export let cart = [{
   productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
   quantity: 1
 },{
-  product: 'Intermediate Size Basketball',
   productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
   quantity: 1
 }]
@@ -11,9 +9,9 @@ export const cart = [{
 export function addToCart(productId){
   let matchingItem;
       
-  cart.forEach((item) => {
-    if(productId === item.productId){
-      matchingItem = item;
+  cart.forEach((cartItem) => {
+    if(productId === cartItem.productId){
+      matchingItem = cartItem;
     }
   });
 
@@ -28,4 +26,15 @@ export function addToCart(productId){
   
   console.log(cart);
 
+}
+
+export function removeFromCart(productId){
+  let newCart = [];
+  
+  cart.forEach(cartItem => {
+    if(cartItem.productId !== productId){
+      newCart.push(cartItem);
+    }
+  });
+  cart = newCart;
 }
