@@ -1,4 +1,4 @@
-const cart = [{
+export const cart = [{
   product: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
   quantity: 1
 },{
